@@ -1,0 +1,21 @@
+[package]
+name = "riscv"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bitflags = "2.*"
+num-derive = "0.*"
+
+[dependencies.num-traits]
+version = "0.*"
+default-features = false
+
+[features]
+M = []
+S = []
+U = []
+D = []
+H = []
+V = []
+timer = []

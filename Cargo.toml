@@ -1,0 +1,23 @@
+[package]
+name = "tom_arch"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["arm", "riscv"]
+
+[target.'cfg(any( target_arch = "riscv64"))'.dependencies]
+riscv = { path = "riscv" }
+
+[target.'cfg(any(target_arch = "aarch64"))'.dependencies]
+arm = { path = "arm" }
+
+[features]
+riscv_D = ["riscv/D"]
+riscv_M = ["riscv/M"]
+riscv_S = ["riscv/S"]
+riscv_H = ["riscv/H"]
+riscv_V = ["riscv/V"]
+riscv_U = ["riscv/U"]
+riscv_timer = ["riscv/timer"]
+arm_timer = ["arm/timer"]
